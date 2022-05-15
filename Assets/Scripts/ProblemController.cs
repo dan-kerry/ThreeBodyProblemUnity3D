@@ -43,18 +43,24 @@ public class ProblemController : MonoBehaviour
                 MathF.Pow(BodyArray[0].transform.localPosition[2] - BodyArray[2].transform.localPosition[2] ,2.0f))), 3.0f)
                 ;
             
+            Rigidbody rb = BodyArray[0].GetComponent<Rigidbody>();
+            rb.AddForce(outputVectors[0], ForceMode.Acceleration);
+            
         outputVectors[1] = -9.8f * BodyArray[2].transform.localScale[0] * (BodyArray[1].transform.localPosition - BodyArray[2].transform.localPosition) / 
                 MathF.Pow((MathF.Sqrt(
                 MathF.Pow(BodyArray[1].transform.localPosition[0] - BodyArray[2].transform.localPosition[0] ,2.0f) + 
                 MathF.Pow(BodyArray[1].transform.localPosition[1] - BodyArray[2].transform.localPosition[1] ,2.0f) +
                 MathF.Pow(BodyArray[1].transform.localPosition[2] - BodyArray[2].transform.localPosition[2] ,2.0f))), 3.0f) -
 
-                9.8f * BodyArray[0].transform.localScale[0] * (BodyArray[0].transform.localPosition - BodyArray[2].transform.localPosition) / 
+                9.8f * BodyArray[0].transform.localScale[0] * (BodyArray[1].transform.localPosition - BodyArray[0].transform.localPosition) / 
                 MathF.Pow((MathF.Sqrt(
                 MathF.Pow(BodyArray[1].transform.localPosition[0] - BodyArray[0].transform.localPosition[0] ,2.0f) + 
                 MathF.Pow(BodyArray[1].transform.localPosition[1] - BodyArray[0].transform.localPosition[1] ,2.0f) +
                 MathF.Pow(BodyArray[1].transform.localPosition[2] - BodyArray[0].transform.localPosition[2] ,2.0f))), 3.0f)
                 ;
+
+                Rigidbody rb1 = BodyArray[1].GetComponent<Rigidbody>();
+                rb1.AddForce(outputVectors[1], ForceMode.Acceleration);
         
         outputVectors[2] = -9.8f * BodyArray[0].transform.localScale[0] * (BodyArray[2].transform.localPosition - BodyArray[0].transform.localPosition) / 
                 MathF.Pow((MathF.Sqrt(
@@ -62,12 +68,15 @@ public class ProblemController : MonoBehaviour
                 MathF.Pow(BodyArray[2].transform.localPosition[1] - BodyArray[0].transform.localPosition[1] ,2.0f) +
                 MathF.Pow(BodyArray[2].transform.localPosition[2] - BodyArray[0].transform.localPosition[2] ,2.0f))), 3.0f) -
 
-                9.8f * BodyArray[1].transform.localScale[0] * (BodyArray[0].transform.localPosition - BodyArray[2].transform.localPosition) / 
+                9.8f * BodyArray[1].transform.localScale[0] * (BodyArray[2].transform.localPosition - BodyArray[1].transform.localPosition) / 
                 MathF.Pow((MathF.Sqrt(
                 MathF.Pow(BodyArray[2].transform.localPosition[0] - BodyArray[1].transform.localPosition[0] ,2.0f) + 
                 MathF.Pow(BodyArray[2].transform.localPosition[1] - BodyArray[1].transform.localPosition[1] ,2.0f) +
                 MathF.Pow(BodyArray[2].transform.localPosition[2] - BodyArray[1].transform.localPosition[2] ,2.0f))), 3.0f)
                 ;
+
+                Rigidbody rb2 = BodyArray[2].GetComponent<Rigidbody>();
+                rb2.AddForce(outputVectors[2], ForceMode.Acceleration);
         
        
         
@@ -87,7 +96,7 @@ public class ProblemController : MonoBehaviour
     void Update()
     {
         if (Bodies.Length > 0) {
-        BodyMover(Solver(Bodies));
+        Solver(Bodies);
         }
     }
 }

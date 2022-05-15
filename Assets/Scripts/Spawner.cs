@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < BodyCount; i++)
         {
             Vector3 randomLocation = new Vector3 (Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
-            Instantiate(BodyPrefab, randomLocation, Quaternion.identity);
+            GameObject newObject = Instantiate(BodyPrefab, randomLocation, Quaternion.identity);
    
     }
 
