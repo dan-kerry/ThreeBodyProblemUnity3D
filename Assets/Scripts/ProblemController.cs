@@ -21,15 +21,11 @@ public class ProblemController : MonoBehaviour
     }
 
     Vector3[] Solver(GameObject[] BodyArray) {
-        
+        //Todo: This needs to be scaled so that it can work on n > 2. For 2 bodies only it may require a seperate solver solution.
     
 
         int ArrayLen = BodyArray.Length;
-        //Debug.Log(ArrayLen);
-        //Vector3 answer = (BodyArray[0].transform.localPosition - BodyArray[1].transform.localPosition);
-        //Debug.Log(answer);
-
-        
+    
         outputVectors[0] = -9.8f * BodyArray[1].transform.localScale[0] * (BodyArray[0].transform.localPosition - BodyArray[1].transform.localPosition) / 
                 MathF.Pow((MathF.Sqrt(
                 MathF.Pow(BodyArray[0].transform.localPosition[0] - BodyArray[1].transform.localPosition[0] ,2.0f) + 
