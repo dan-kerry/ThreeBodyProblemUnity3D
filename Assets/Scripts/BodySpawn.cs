@@ -8,7 +8,7 @@ public class BodySpawn : MonoBehaviour
  
     void Start()
     {
-            Vector3 randomForce = new Vector3 (Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+            Vector3 randomForce = new Vector3 (Random.Range(-8f, 8f), Random.Range(-8f, 8f), Random.Range(-8f, 8f));
             float BodyScale = Random.Range(2f, 6.0f);
             transform.localScale = new Vector3(BodyScale, BodyScale, BodyScale);
             
