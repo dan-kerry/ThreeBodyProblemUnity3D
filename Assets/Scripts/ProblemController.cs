@@ -74,10 +74,20 @@ public class ProblemController : MonoBehaviour
                 Rigidbody rb2 = BodyArray[2].GetComponent<Rigidbody>();
                 rb2.AddForce(outputVectors[2], ForceMode.Acceleration);
         
-       
+        for (int i = 0; i > BodyArray.Length; i++) {
+            
+            List<int> tempListA = BodyArray.ToList();
+           
+
+          
+            
+
+
+        }
         
         return outputVectors;
     }
+
 
     void BodyMover(Vector3[] dvs){
 
