@@ -76,7 +76,7 @@ public class ProblemController : MonoBehaviour
         
         for (int i = 0; i > BodyArray.Length; i++) {
             
-            List<int> tempListA = BodyArray.ToList();
+            //List<int> tempListA = BodyArray.ToList();
            
 
           
@@ -99,7 +99,7 @@ public class ProblemController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Bodies.Length > 0) {
         Solver(Bodies);

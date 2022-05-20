@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
                 keyObject = body;
             }
         }
-        transform.parent = keyObject.transform;
+        transform.parent = keyObject.transform;   
     }
 
     void Update()
