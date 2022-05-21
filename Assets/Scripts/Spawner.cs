@@ -8,6 +8,10 @@ public class Spawner : MonoBehaviour
 
     public int BodyCount;
     public GameObject BodyPrefab;
+
+    
+    
+
    
     // Start is called before the first frame update
     void Start()
@@ -20,9 +24,6 @@ public class Spawner : MonoBehaviour
             
     }
 
-    void Figure8() {
-
-    }
 
 }
 

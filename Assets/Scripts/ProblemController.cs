@@ -8,6 +8,10 @@ public class ProblemController : MonoBehaviour
     
     public GameObject[] Bodies;
     private Vector3[] outputVectors = new Vector3[3];
+    public List<GameObject> BodyList = new List<GameObject>();
+ 
+ 
+         
     //private Rigidbody rb;
     void Start()
     {
@@ -18,6 +22,9 @@ public class ProblemController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         Bodies = GameObject.FindGameObjectsWithTag("Body");
+        foreach(GameObject Body in Bodies) {
+             BodyList.Add(Body);
+         }
     }
 
     Vector3[] Solver(GameObject[] BodyArray) {

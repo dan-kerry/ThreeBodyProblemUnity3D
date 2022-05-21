@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class BodySpawn : MonoBehaviour
 {
+    public GameObject RegisterA;
+  
     Rigidbody rb;
- 
+    private List <GameObject> RelevantList;
+    
     void Start()
     {
-            RandomSpawn();
+        RandomSpawn();
+        RegisterA = GameObject.FindWithTag("GameController");
+        RegisterA.GetComponent<ObjectRegister>().AllBodies.Add(gameObject);
+    }
+    void FixedUpdate() {
+
+        
     }
 
     void RandomSpawn() {
