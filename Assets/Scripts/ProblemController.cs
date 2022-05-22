@@ -27,9 +27,6 @@ public class ProblemController : MonoBehaviour
          }
     }
 
-  
-
-
     void BodyMover(Vector3[] dvs){
 
     for (int i = 0; i < Bodies.Length; i++) 

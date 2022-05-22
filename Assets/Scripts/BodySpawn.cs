@@ -11,7 +11,8 @@ public class BodySpawn : MonoBehaviour
     
     void Start()
     {
-        RandomSpawn();
+        //RandomSpawn();
+        //SetSpawn();
         RegisterA = GameObject.FindWithTag("GameController");
         RegisterA.GetComponent<ObjectRegister>().AllBodies.Add(gameObject);
     }

@@ -8,23 +8,70 @@ public class Spawner : MonoBehaviour
 
     public int BodyCount;
     public GameObject BodyPrefab;
+     Rigidbody rb;
+     Rigidbody rb2;
+     Rigidbody rb3;
+    
+/*
+    public Vector3[,] Figure8 = new [,] {{ new Vector3(-0.97000436f, 0.24308753f, 0f), new Vector3(0.466203685f, 0.43236573f, 0f),new Vector3(1f, 1f, 1f) },
+                                        {new Vector3(0.97000436f, -0.24308753f, 0f), new Vector3(0.466203685f, 0.43236573f, 0f),new Vector3(1f, 1f, 1f)},
+                                        {new Vector3(0f, 0f, 0f), new Vector3(-0.93240737f, -0.86473146f, 0f),new Vector3(1f, 1f, 1f)}} ;
 
-    
-    
 
    
+    */
+void SetStart() {
+            GameObject newObject1 = Instantiate(BodyPrefab, Vector3.zero, Quaternion.identity);
+            Vector3 randomLocation = new Vector3 (-0.97000436f, 0.24308753f, 0f);
+            Vector3 randomForce = new Vector3 (0.466203685f, 0.43236573f, 0f);
+            float BodyScale = 0.1f;
+            newObject1.transform.localScale = new Vector3(BodyScale, BodyScale, BodyScale);
+            newObject1.transform.localPosition = randomLocation;
+            rb = newObject1.GetComponent<Rigidbody>();
+            rb.mass = BodyScale;
+            rb.velocity = randomForce;
+
+            GameObject newObject2 = Instantiate(BodyPrefab, Vector3.zero, Quaternion.identity);
+            Vector3 randomLocation2 = new Vector3 (0.97000436f, -0.24308753f, 0f);
+            Vector3 randomForce2 = new Vector3 (0.466203685f, 0.43236573f, 0f);
+            float BodyScale2 = 0.1f;
+            newObject2.transform.localScale = new Vector3(BodyScale2, BodyScale2, BodyScale2);
+            newObject2.transform.localPosition = randomLocation2;
+            rb2 = newObject2.GetComponent<Rigidbody>();
+            rb2.mass = BodyScale2;
+            rb2.velocity = randomForce2;
+
+            GameObject newObject3 = Instantiate(BodyPrefab, Vector3.zero, Quaternion.identity);
+            Vector3 randomLocation3 = new Vector3 (0f, 0f, 0f);
+            Vector3 randomForce3 = new Vector3 (-0.93240737f, -0.86473146f, 0f);
+            float BodyScale3 = 0.1f;
+            newObject3.transform.localScale = new Vector3(BodyScale3, BodyScale3, BodyScale3);
+            newObject3.transform.localPosition = randomLocation3;
+            rb3 = newObject3.GetComponent<Rigidbody>();
+            rb3.mass = BodyScale3;
+            rb3.velocity = randomForce3;
+
+}
+     
+
+    
     // Start is called before the first frame update
     void Start()
-    
     {
-        for (int i = 0; i < BodyCount; i++)
-        {
-            //Vector3 randomLocation = new Vector3 (Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
-            GameObject newObject = Instantiate(BodyPrefab, Vector3.zero, Quaternion.identity);
-            
+        
+        //RandomStart();
+        SetStart();
     }
 
+void RandomStart() {
+    for (int i = 0; i < BodyCount; i++) {
+    GameObject newObject = Instantiate(BodyPrefab, Vector3.zero, Quaternion.identity);
+    }
 
-}
+    
 
-}
+
+
+}}
+
+

@@ -58,6 +58,6 @@ public class nBodyCalculation : MonoBehaviour
     {
         // Draw a yellow sphere at the transform's position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, (transform.position+solveMotion()*2));
+        Gizmos.DrawLine(transform.position, (transform.position+solveMotion()));
     }
 }
