@@ -23,12 +23,18 @@ public class CameraController : MonoBehaviour
                 keyObject = body;
             }
         }
-        transform.parent = keyObject.transform;   
+        transform.localPosition = keyObject.transform.localPosition;
+        Vector3 Modification = new Vector3(0.0f, 0.0f, 3f);
+        transform.localPosition =  transform.localPosition + Modification;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (keyObject){
+        transform.localPosition = keyObject.transform.localPosition;
+        Vector3 Modification = new Vector3(0.0f, 0.0f, -3f);
+        transform.localPosition =  transform.localPosition + Modification;
+        }
         
     }
 }
