@@ -4,7 +4,7 @@
         <InitialXPosition>-0.97000436 </InitialXPosition>
         <InitialYPosition>0.24308753</InitialYPosition>
         <InitialZPosition>0</InitialZPosition>
-        <Mass>0.1</Mass>
+        <Mass>1</Mass>
         <InitialXVelocity>0.466203685</InitialXVelocity>
         <InitialYVelocity>0.43236573</InitialYVelocity>
         <InitialZVelocity>0</InitialZVelocity>
@@ -14,7 +14,7 @@
         <InitialXPosition>0.97000436</InitialXPosition>
         <InitialYPosition>-0.24308753</InitialYPosition>
         <InitialZPosition>0</InitialZPosition>
-        <Mass>0.1</Mass>
+        <Mass>1</Mass>
         <InitialXVelocity>0.466203685</InitialXVelocity>
         <InitialYVelocity>0.43236573</InitialYVelocity>
         <InitialZVelocity>0</InitialZVelocity>
@@ -24,7 +24,7 @@
         <InitialXPosition>0</InitialXPosition>
         <InitialYPosition>0</InitialYPosition>
         <InitialZPosition>0</InitialZPosition>
-        <Mass>0.1</Mass>
+        <Mass>1</Mass>
         <InitialXVelocity>-0.93240737</InitialXVelocity>
         <InitialYVelocity>-0.86473146</InitialYVelocity>
         <InitialZVelocity>0</InitialZVelocity>

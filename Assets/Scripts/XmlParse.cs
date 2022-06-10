@@ -13,15 +13,15 @@ public class XmlParse : MonoBehaviour
 {
     XDocument xmlDoc;
     IEnumerable<XElement> items; 
-    public List <BodyData> InitialBodyList = new List <BodyData>(); 
+    List <BodyData> data = new List <BodyData>(); 
 
     void Start() 
     {
         LoadXML();
-        StartCoroutine("AssignData");
-        //return InitialBodyList;
-    }
+        StartCoroutine ("AssignData");
+        Debug.Log(data[0].Mass);
 
+    }
     void LoadXML()
     {
         xmlDoc = XDocument.Load("/Users/dankerry/Documents/Projects/GPS/GPS/Assets/Scripts/Scenarios/Figure8.xml"); 
@@ -40,11 +40,14 @@ public class XmlParse : MonoBehaviour
             float YVel = (float)Convert.ToDouble(el.Element("InitialYVelocity").Value);
             float ZVel = (float)Convert.ToDouble(el.Element("InitialZVelocity").Value);
 
-            InitialBodyList.Add(new BodyData(XPos, YPos, ZPos, Mas, XVel, YVel, ZVel));                    
+            data.Add(new BodyData(XPos, YPos, ZPos, Mas, XVel, YVel, ZVel));                    
         }
         yield return null;
     }
 }
+
+
+
 
 public class BodyData
 {
@@ -59,5 +62,6 @@ public class BodyData
         XVelocity = InitialXVelocity;
         YVelocity = InitialYVelocity;
         ZVelocity = InitialZVelocity;
+        
     }
 }
